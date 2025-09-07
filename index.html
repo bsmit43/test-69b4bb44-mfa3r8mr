@@ -1,0 +1,745 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1. 0"><title>Grace Community Church - Welcome to our faith community</title><meta name="description" content="Grace Community Church is a welcoming faith community dedicated to worship, fellowship, and service. Join us for Sunday services and community outreach. "><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet"> <style>
+        :root {
+            --primary: #3b5173;
+            --primary-dark: #2a3b54;
+            --secondary: #e5b167;
+            --accent: #d4a04f;
+            --light: #f5f5f5;
+            --dark: #333;
+            --text: #555;
+            --white: #fff;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(59, 81, 115, 0.7), rgba(59, 81, 115, 0.7)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            margin-top: 76px;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Welcome Section */
+        .welcome {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .welcome-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .welcome-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .welcome-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .service-times {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-day {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .service-time {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .weekly-activities {
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 30px;
+        }
+        
+        .weekly-activities h3 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .activity-item {
+            margin-bottom: 15px;
+        }
+        
+        .activity-day {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        /* Events Section */
+        .events {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .event-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+        
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-date {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .event-description {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: var(--secondary);
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .author-role {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        
+        /* Call to Action */
+        .cta {
+            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 25px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-widget p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-service {
+            margin-bottom: 15px;
+        }
+        
+        .footer-service-day {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .subscribe-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .subscribe-input {
+            flex-grow: 1;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            border: none;
+            padding: 10px 15px;
+        }
+        
+        .subscribe-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .service-times,
+            .events-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-container,
+            .contact-container,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .hero {
+                height: 70vh;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .welcome-image {
+                margin-bottom: 30px;
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-times,
+            .events-grid,
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head><body><header><div class="container header-container"><a href="#" class="logo">Grace<span>Community</span></a><button class="mobile-menu-btn">☰</button><nav><ul><li><a href="index. Html">Home</a></li><li><a href="about. Html">About</a></li><li><a href="sermons. Html">Sermons</a></li><li><a href="events. Html">Events</a></li><li><a href="ministries. Html">Ministries</a></li><li><a href="contact. Html">Contact</a></li></ul></nav></div></header><section class="hero"><div class="container"><div class="hero-content"><h1>Welcome to Grace Community Church</h1><p>A place where faith, hope, and love come together. Join us for worship and fellowship as we grow in our relationship with God and each other. </p><a href="#" class="btn">Join Us This Sunday</a><a href="#" class="btn btn-secondary">Watch Online</a></div></div></section><section class="welcome"><div class="container welcome-container"><div class="welcome-content"><h2>Welcome to Our Church Family</h2><p>Grace Community Church is a place where everyone is welcome, regardless of where you are in your spiritual journey. We believe in the transformative power of God's love and strive to create a community where everyone can experience that love. </p><p>Our mission is to love God, love people, and make disciples. We accomplish this through authentic worship, Biblical teaching, genuine community, and compassionate service. </p><a href="about. Html" class="btn">Learn More About Us</a></div><div class="welcome-image"><img src="https://images.unsplash.com/photo-1536103041009-3693a03dbbb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Church congregation"></div></div></section><section class="services"><div class="container"><div class="section-header"><h2>Worship Services</h2><p>Join us for worship, prayer, and Biblical teaching</p></div><div class="service-times"><div class="service-card"><div class="service-icon">✝️</div><h3 class="service-day">Sunday Morning</h3><p class="service-time">9:00 AM & 11:00 AM</p><p>Traditional worship service with choir and orchestra</p></div><div class="service-card"><div class="service-icon">🙏</div><h3 class="service-day">Sunday Evening</h3><p class="service-time">6:00 PM</p><p>Contemporary worship service with modern music</p></div><div class="service-card"><div class="service-icon">📖</div><h3 class="service-day">Wednesday</h3><p class="service-time">7:00 PM</p><p>Midweek Bible study and prayer service</p></div></div><div class="weekly-activities"><h3>Weekly Activities</h3><div class="activities-grid"><div class="activity-item"><p class="activity-day">Monday, 7:00 PM</p><p>Men's Bible Study</p></div><div class="activity-item"><p class="activity-day">Tuesday, 10:00 AM</p><p>Women's Prayer Group</p></div><div class="activity-item"><p class="activity-day">Wednesday, 6:00 PM</p><p>Youth Group</p></div><div class="activity-item"><p class="activity-day">Thursday, 7:00 PM</p><p>Choir Practice</p></div><div class="activity-item"><p class="activity-day">Friday, 6:30 PM</p><p>Community Dinner</p></div><div class="activity-item"><p class="activity-day">Saturday, 9:00 AM</p><p>Community Service</p></div></div></div></div></section><section class="events"><div class="container"><div class="section-header"><h2>Upcoming Events</h2><p>Join us for these special events and activities</p></div><div class="events-grid"><div class="event-card"><div class="event-image"><img src="https://images.unsplash.com/photo-1603072388338-e587f1181b20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Community Picnic"></div><div class="event-content"><span class="event-date">July 15</span><h3 class="event-title">Annual Church Picnic</h3><p class="event-description">Join us for food, games, and fellowship at our annual church picnic at Riverside Park. </p><a href="#" class="btn btn-outline">Learn More</a></div></div><div class="event-card"><div class="event-image"><img src="https://images.unsplash.com/photo-1613963931023-5dc59437c8a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vacation Bible School"></div><div class="event-content"><span class="event-date">July 24-28</span><h3 class="event-title">Vacation Bible School</h3><p class="event-description">A week of fun, learning, and adventure for children ages 5-12. Register today!</p><a href="#" class="btn btn-outline">Register Now</a></div></div><div class="event-card"><div class="event-image"><img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Worship Concert"></div><div class="event-content"><span class="event-date">August 5</span><h3 class="event-title">Worship Night</h3><p class="event-description">An evening of worship, prayer, and spiritual renewal. Everyone is welcome. </p><a href="#" class="btn btn-outline">Learn More</a></div></div></div></div></section><section class="testimonials"><div class="container"><div class="section-header"><h2>Our Community</h2><p>Hear from members of our church family</p></div><div class="testimonials-grid"><div class="testimonial-card"><p class="testimonial-text">Grace Community Church has been a spiritual home for my family for over 10 years. The genuine love and support we've received here has helped us grow in our faith and navigate life's challenges. </p><div class="testimonial-author"><div class="author-image"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson"></div><div class="author-info"><p class="author-name">Sarah Johnson</p><p class="author-role">Church Member For years</p></div></div></div><div class="testimonial-card"><p class="testimonial-text">I was looking for a church where I could learn and grow spiritually. The biblical teaching and warm community at Grace have exceeded my expectations. I'm thankful to have found my church home. </p><div class="testimonial-author"><div class="author-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Rodriguez"></div><div class="author-info"><p class="author-name">Michael Rodriguez</p><p class="author-role">New Member</p></div></div></div></div></div></section><section class="cta"><div class="container"><h2>Come Worship With Us</h2><p>We would love to have you join us for worship this Sunday. Our doors are open to everyone seeking to know God better and experience His love in community. </p><div class="cta-buttons"><a href="#" class="btn btn-secondary">Plan Your Visit</a><a href="#" class="btn btn-outline">Contact test</a></div></div></section><section class="contact"><div class="container"><div class="section-header"><h2>Connect with test</h2><p>We'd love to hear from you</p></div><div class="contact-container"><div class="contact-info"><h3>Contact Information</h3><div class="contact-details"><div class="contact-item"><div class="contact-icon">📍</div><div class="contact-text"><h4>Address</h4><p>123 Faith Avenue<br>Grace City, GC 12345</p></div></div><div class="contact-item"><div class="contact-icon">📞</div><div class="contact-text"><h4>Phone</h4><p>(123) 456-7890</p></div></div><div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-text"><h4>Email</h4><p>info@gracecommunity. Org</p></div></div><div class="contact-item"><div class="contact-icon">🕒</div><div class="contact-text"><h4>Office Hours</h4><p>Monday - Friday: 9:00 AM - 5:00 PM</p></div></div></div><h3>Connect With Us</h3><div class="social-links"><a href="#" class="social-link">f</a><a href="#" class="social-link">t</a><a href="#" class="social-link">in</a><a href="#" class="social-link">yt</a></div></div><div class="contact-form"><h3>Send Us a Message</h3><form><div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" required></div><div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email" required></div><div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" required></div><div class="form-group"><label for="message">Your Message</label> <textarea id="message" name="message" required></textarea> </div><button type="submit" class="btn">Send Message</button></form></div></div></div></section><footer><div class="container"><div class="footer-container"><div class="footer-widget"><h4>About Us</h4><p>Grace Community Church is a welcoming community of believers dedicated to worship, fellowship, and service. </p><p>Our mission is to love God, love people, and make disciples in our community and around the world. </p></div><div class="footer-widget"><h4>Quick Links</h4><ul class="footer-links"><li><a href="about. Html">About Us</a></li><li><a href="sermons. Html">Ministries</a></li><li><a href="giving. Html">Online Giving</a></li><li><a href="contact. Html">Contact test</a></li></ul></div><div class="footer-widget"><h4>Service Times</h4><div class="footer-service"><p class="footer-service-day">Sunday</p><p>9:00 AM & 11:00 AM</p></div><div class="footer-service"><p class="footer-service-day">Sunday Evening</p><p>6:00 PM</p></div><div class="footer-service"><p class="footer-service-day">Wednesday</p><p>7:00 PM</p></div></div><div class="footer-widget"><h4>Newsletter</h4><p>Subscribe to our newsletter to receive updates and announcements. </p><form class="subscribe-form"><input type="email" class="subscribe-input" placeholder="Your Email"><button type="submit" class="subscribe-btn">Subscribe</button></form></div></div><div class="footer-bottom"><p>&copy; 2025 Grace Community Church. All Rights Reserved. </p></div></div></footer> <script> // Mobile Menu Toggle const mobileMenuBtn = document. QuerySelector('. Mobile-menu-btn'); const navMenu = document. QuerySelector('nav ul'); mobileMenuBtn. AddEventListener('click', () => { navMenu. ClassList. Toggle('active'); }); // Close mobile menu when clicking outside document. AddEventListener('click', (e) => { if (!e. target. Closest('nav') && !e. target. Closest('. Mobile-menu-btn')) { navMenu. ClassList. Remove('active'); } }); </script> <!-- Universal Form Handler --> <script> window. FORM_HANDLER_CONFIG = { apiEndpoint: 'https://genmysite.com/api/forms/submit', websiteId: null, recaptchaSiteKey: null, debug: false }; </script> <script src="/js/form-handler. Js" defer></script>
+</body></html>
